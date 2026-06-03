@@ -1,0 +1,13 @@
+### 如何运行项目
+后端启动：
+
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+前端启动：
+
+cd frontend
+npm install   # 已完成
+npm run dev
+```

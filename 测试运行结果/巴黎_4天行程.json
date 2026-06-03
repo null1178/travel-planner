@@ -1,0 +1,174 @@
+{
+  "destination": "巴黎",
+  "total_days": 4,
+  "budget_level": "comfort",
+  "daily_plans": [
+    {
+      "day": 1,
+      "theme": "经典地标与美食初探",
+      "activities": [
+        {
+          "time": "09:00",
+          "activity": "埃菲尔铁塔参观",
+          "notes": "建议提前预订门票，可登顶俯瞰巴黎"
+        },
+        {
+          "time": "11:00",
+          "activity": "战神广场野餐与Rue Cler市场漫步",
+          "notes": "在本地市集购买法棍、奶酪和水果，体验法式野餐"
+        },
+        {
+          "time": "14:00",
+          "activity": "玛黑区美食徒步之旅",
+          "notes": "由专业导游带领，品尝奶酪、面包、熟食和甜点，约3小时"
+        },
+        {
+          "time": "16:30",
+          "activity": "卢浮宫快速参观",
+          "notes": "重点欣赏《蒙娜丽莎》和古希腊雕塑，建议停留2小时"
+        }
+      ],
+      "meals": [
+        {
+          "meal_type": "lunch",
+          "suggestion": "Café du Marché 的经典法式火腿黄油三明治配沙拉",
+          "estimated_cost": 150
+        },
+        {
+          "meal_type": "dinner",
+          "suggestion": "Le Comptoir du Relais 的法式洋葱汤和牛排薯条",
+          "estimated_cost": 300
+        }
+      ],
+      "accommodation_note": "推荐入住拉丁区或圣日耳曼区的四星级酒店，如 Hôtel Ducs de Bourgogne，步行可达众多景点",
+      "daily_budget": 2300
+    },
+    {
+      "day": 2,
+      "theme": "左岸文艺与美食手作",
+      "activities": [
+        {
+          "time": "09:00",
+          "activity": "奥赛博物馆参观",
+          "notes": "欣赏印象派大师作品，如莫奈、梵高"
+        },
+        {
+          "time": "11:00",
+          "activity": "花神咖啡馆体验",
+          "notes": "在萨特和波伏娃曾光顾的咖啡馆小坐，品尝一杯奶油咖啡"
+        },
+        {
+          "time": "14:00",
+          "activity": "马卡龙制作工坊",
+          "notes": "在 La Cuisine Paris 学习制作正宗法式马卡龙，约2小时"
+        },
+        {
+          "time": "16:30",
+          "activity": "Marché des Enfants Rouges 美食市场探索",
+          "notes": "巴黎最古老的市场，品尝各国小吃，推荐尝试摩洛哥炖菜"
+        }
+      ],
+      "meals": [
+        {
+          "meal_type": "lunch",
+          "suggestion": "Le Procope 的焗蜗牛和红酒炖鸡",
+          "estimated_cost": 250
+        },
+        {
+          "meal_type": "dinner",
+          "suggestion": "Chez Janou 的普罗旺斯罗勒大蒜汤和烤羊排",
+          "estimated_cost": 280
+        }
+      ],
+      "accommodation_note": "继续入住同一舒适酒店，确保行程连贯",
+      "daily_budget": 2400
+    },
+    {
+      "day": 3,
+      "theme": "蒙马特高地与法式烹饪",
+      "activities": [
+        {
+          "time": "09:00",
+          "activity": "圣心大教堂与蒙马特村庄漫步",
+          "notes": "免费参观教堂，俯瞰巴黎全景，感受艺术氛围"
+        },
+        {
+          "time": "11:00",
+          "activity": "小丘广场与达利美术馆",
+          "notes": "欣赏街头画家作品，参观超现实主义大师达利的收藏"
+        },
+        {
+          "time": "14:00",
+          "activity": "法式烹饪课体验",
+          "notes": "在 Le Foodist 跟随主厨学习制作三道式法餐，含品尝"
+        },
+        {
+          "time": "17:00",
+          "activity": "爱墙与红磨坊街区闲逛",
+          "notes": "打卡用世界语言书写“我爱你”的爱墙，感受皮加勒区夜生活前奏"
+        }
+      ],
+      "meals": [
+        {
+          "meal_type": "lunch",
+          "suggestion": "La Mère Catherine 的传统法式荞麦煎饼",
+          "estimated_cost": 200
+        },
+        {
+          "meal_type": "dinner",
+          "suggestion": "Bouillon Pigalle 的鞑靼牛排和焦糖布丁",
+          "estimated_cost": 200
+        }
+      ],
+      "accommodation_note": "保持原酒店，便于存放行李和休息",
+      "daily_budget": 2200
+    },
+    {
+      "day": 4,
+      "theme": "甜蜜告别与高端美食",
+      "activities": [
+        {
+          "time": "09:00",
+          "activity": "莎士比亚书店与西岱岛漫游",
+          "notes": "在传奇书店翻看旧书，沿塞纳河畔感受历史"
+        },
+        {
+          "time": "11:00",
+          "activity": "巴黎顶级巧克力与糕点品尝之旅",
+          "notes": "由 Paris by Mouth 组织的导览，探访 Maison du Chocolat 等名店"
+        },
+        {
+          "time": "14:00",
+          "activity": "Le Bon Marché 食品部寻宝",
+          "notes": "在巴黎最优雅的百货公司选购美食伴手礼，如鹅肝酱、盐之花"
+        },
+        {
+          "time": "16:30",
+          "activity": "Ladurée 或 Pierre Hermé 下午茶",
+          "notes": "品尝招牌马卡龙和精致甜点，为旅程画上甜蜜句号"
+        }
+      ],
+      "meals": [
+        {
+          "meal_type": "lunch",
+          "suggestion": "圣路易岛 Berthillon 冰淇淋与附近咖啡馆简餐",
+          "estimated_cost": 150
+        },
+        {
+          "meal_type": "dinner",
+          "suggestion": "Benoit 米其林一星的经典法餐，推荐鹅肝和慢煮牛肉",
+          "estimated_cost": 500
+        }
+      ],
+      "accommodation_note": "最后一夜可考虑靠近机场的酒店，或延续市区住宿",
+      "daily_budget": 2300
+    }
+  ],
+  "overall_tips": [
+    "提前预订热门餐厅和美食体验，以免错过心仪之选",
+    "购买巴黎博物馆通票，可节约排队时间并包含多个景点",
+    "地铁周卡 Navigo 适合多日市区交通，方便高效",
+    "用餐时尊重法式礼仪，侍者未递账单前勿催促",
+    "尝试当地市场时，可学习几句法语问候，提升互动体验"
+  ]
+}

@@ -1,0 +1,43 @@
+# 环境变量文件（包含敏感信息）
+.env
+.env.local
+.env.*.local
+
+# 敏感文件
+密码.txt
+
+# 前端依赖
+frontend/node_modules/
+frontend/dist/
+frontend/.nuxt/
+frontend/.output/
+
+# 后端依赖和编译产物
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.tox/
+backend/build/
+backend/dist/
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志和临时文件
+*.log
+*.tmp
+.DS_Store
+
+# Python 相关
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 虚拟环境
+venv/
+.env/
+.venv/
