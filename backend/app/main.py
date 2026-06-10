@@ -1,11 +1,15 @@
-from fastapi import FastAPI, HTTPException
+﻿from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from .models import PlanRequest, TripPlan, FeedbackRequest
 from .planner import generate_plan, get_history, add_feedback
+from .database import init_db
+from .routers import auth_router
+from .auth import get_current_user
+from .user_models import User
 
 app = FastAPI(title="AI 旅行规划师 API")
 
-# 允许前端跨域访问（开发时 Vue 运行在 5173 端口）
+# Allow frontend cross-domain access
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://localhost:5175"],
@@ -14,9 +18,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include routers
+app.include_router(auth_router.router)
+
+
+@app.on_event("startup")
+def startup():
+    init_db()
+
+
 @app.get("/")
 def root():
     return {"message": "旅行规划师后端已启动"}
+
 
 @app.post("/api/generate", response_model=TripPlan)
 async def generate_trip(request: PlanRequest):
@@ -26,6 +40,7 @@ async def generate_trip(request: PlanRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/api/history")
 async def get_plan_history():
     try:
@@ -33,6 +48,7 @@ async def get_plan_history():
         return {"plans": history}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.get("/api/history/{plan_id}")
 async def get_plan_by_id(plan_id: str):
@@ -45,6 +61,7 @@ async def get_plan_by_id(plan_id: str):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post("/api/feedback")
 async def submit_feedback(feedback: FeedbackRequest):

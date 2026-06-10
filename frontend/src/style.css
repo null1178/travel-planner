@@ -671,3 +671,490 @@ body {
     columns: 1;
   }
 }
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 56px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #667eea;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  color: #495057;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  background: #f0f0ff;
+  color: #667eea;
+}
+
+.nav-link.router-link-exact-active {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.nav-user {
+  color: #343a40;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.nav-btn {
+  border: 1px solid #dee2e6;
+  background: transparent;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #6c757d;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  background: #f8f9fa;
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* ===== Auth Pages ===== */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 4rem;
+  min-height: calc(100vh - 56px - 60px);
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h2 {
+  font-size: 1.5rem;
+  color: #343a40;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.auth-sub {
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.auth-error {
+  background: #fff5f5;
+  color: #dc3545;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.auth-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.auth-switch a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===== Save Button ===== */
+.btn-save {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-save:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(17, 153, 142, 0.4);
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.save-msg {
+  color: #11998e;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.save-hint {
+  color: #6c757d;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* ===== User Center ===== */
+.user-center {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.uc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.uc-header h2 {
+  color: white;
+  font-size: 1.4rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.uc-loading {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+.uc-empty {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+}
+
+.uc-empty p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+/* Plan cards in user center */
+.plans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.plan-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.plan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.plan-card-header:hover {
+  background: #f8f9fa;
+}
+
+.plan-card-info h3 {
+  font-size: 1.1rem;
+  color: #343a40;
+  margin-bottom: 0.2rem;
+}
+
+.plan-meta {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.plan-rating {
+  font-size: 0.8rem;
+  color: #667eea;
+  margin-left: 0.75rem;
+}
+
+.plan-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  border: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-text {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.btn-text:hover {
+  background: #667eea;
+  color: white;
+}
+
+.btn-danger {
+  background: #fff5f5;
+  color: #dc3545;
+}
+
+.btn-danger:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.plan-card-body {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.plan-card-body .result-summary {
+  border-radius: 10px;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.plan-card-body .daily-plan {
+  margin-bottom: 1rem;
+}
+
+/* ===== Responsive updates ===== */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  .nav-links {
+    gap: 0.25rem;
+  }
+  .nav-link {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  .auth-card {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+  .user-center {
+    padding: 1rem;
+  }
+  .plan-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .plan-card-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+/* ===== Transportation Cards ===== */
+.transport-section {
+  padding: 0 2rem 1.5rem;
+}
+
+.transport-section h3 {
+  margin-bottom: 1rem;
+  color: #343a40;
+  font-size: 1.1rem;
+}
+
+.transport-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transport-card {
+  background: #f0f4ff;
+  border-radius: 12px;
+  overflow: hidden;
+  border-left: 4px solid #667eea;
+}
+
+.tc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #e8edff;
+}
+
+.tc-icon {
+  font-size: 1.3rem;
+}
+
+.tc-mode {
+  font-weight: 700;
+  color: #667eea;
+}
+
+.tc-route {
+  color: #343a40;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tc-body {
+  padding: 1rem;
+}
+
+.tc-stations {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.tc-station {
+  flex: 1;
+}
+
+.tc-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 0.2rem;
+}
+
+.tc-station-name {
+  display: block;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.tc-time {
+  font-size: 0.85rem;
+  color: #667eea;
+  font-weight: 500;
+}
+
+.tc-arrow {
+  font-size: 1.2rem;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.tc-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.tc-tips {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #856404;
+  background: #fff8e1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .tc-stations {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .tc-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+  .transport-section {
+    padding: 0 1rem 1rem;
+  }
+}
+/* ===== Selection Map ===== */
+.map-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 0.55rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background: #f8f9fa;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #495057;
+}
+
+.mode-btn:hover {
+  background: #e9ecef;
+}
+
+.mode-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.selection-map {
+  width: 100%;
+  height: 260px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #e9ecef;
+}
+
+.map-loading {
+  text-align: center;
+  color: #6c757d;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+.mode-hint { font-size: 0.8rem; color: #6c757d; align-self: center; margin-left: auto; }
