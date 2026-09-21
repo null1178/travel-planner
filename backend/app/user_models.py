@@ -1,4 +1,4 @@
-﻿from sqlalchemy import Column, Integer, String, DateTime, JSON, ForeignKey
+﻿from sqlalchemy import Column, Integer, String, DateTime, JSON, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from .database import Base
@@ -23,10 +23,22 @@ class SavedPlan(Base):
     destination = Column(String(100), nullable=False)
     total_days = Column(Integer, nullable=False)
     budget_level = Column(String(20), nullable=False)
-    plan_data = Column(JSON, nullable=False)  # full TripPlan as JSON
-    request_data = Column(JSON, nullable=True)  # original PlanRequest
+    plan_data = Column(JSON, nullable=False)
+    request_data = Column(JSON, nullable=True)
     rating = Column(Integer, nullable=True)
     comment = Column(String(500), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("User", back_populates="plans")
+
+
+class ShareLink(Base):
+    __tablename__ = "share_links"
+
+    id = Column(Integer, primary_key=True, index=True)
+    token = Column(String(64), unique=True, index=True, nullable=False)
+    plan_data = Column(JSON, nullable=False)
+    destination = Column(String(100), nullable=False)
+    total_days = Column(Integer, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    is_active = Column(Boolean, default=True)

@@ -123,6 +123,7 @@ const flexibilityOptions = [
 const isSubmitting = ref(false)
 const isSaving = ref(false)
 const planResult: any = ref(null)
+const weatherLoading = ref(false)
 const saveMessage = ref("")
 const activeTab = ref("basic")
 const tabs = [
@@ -154,6 +155,58 @@ function goToNextTab() {
   const currentIndex = tabs.findIndex(t => t.id === activeTab.value)
   if (currentIndex < tabs.length - 1) activeTab.value = tabs[currentIndex + 1].id
 }
+
+async function fetchWeather() {
+  if (!planResult.value || !formData.destination) return
+  weatherLoading.value = true
+  try {
+    const resp = await fetch(
+      `https://wttr.in/${encodeURIComponent(formData.destination)}?format=j1`,
+      { headers: { "User-Agent": "Mozilla/5.0" } }
+    )
+    if (!resp.ok) {
+      console.warn("天气查询失败: HTTP", resp.status)
+      return
+    }
+    const data = await resp.json()
+    const weatherArr = data.weather || []
+    const forecasts: any[] = []
+    for (const dayData of weatherArr.slice(0, 7)) {
+      const hourly = dayData.hourly || []
+      const mid = hourly.length > 6 ? hourly[6] : (hourly[0] || {})
+      const early = hourly.length > 2 ? hourly[2] : (hourly[0] || {})
+      forecasts.push({
+        day_weather: (mid.weatherDesc || [{}])[0].value || "",
+        night_weather: (early.weatherDesc || [{}])[0].value || "",
+        day_temp: mid.tempC || "",
+        night_temp: early.tempC || "",
+        day_wind: mid.winddir16Point || "",
+        day_power: mid.windspeedKmph || "",
+      })
+    }
+    planResult.value.daily_plans.forEach((day: any, index: number) => {
+      const forecast = forecasts[index]
+      if (forecast) {
+        const dayWeather = forecast.day_weather || ""
+        const nightWeather = forecast.night_weather || ""
+        const dayTemp = forecast.day_temp || ""
+        const nightTemp = forecast.night_temp || ""
+        const dayWind = forecast.day_wind || ""
+        const dayPower = forecast.day_power || ""
+
+        let alert = `白天${dayWeather} ${dayTemp}°C，夜间${nightWeather} ${nightTemp}°C`
+        if (dayWind) alert += `，${dayWind} ${dayPower}km/h`
+        day.weather_alert = alert
+      }
+    })
+  } catch (e) {
+    console.warn("天气查询失败:", e)
+  } finally {
+    weatherLoading.value = false
+  }
+}
+
+
 
 async function submitForm() {
   if (!formData.destination.trim()) {
@@ -192,6 +245,7 @@ async function submitForm() {
     requestData.flexibility = formData.flexibility
 
     planResult.value = await generatePlan(requestData)
+    await fetchWeather()
   } catch (error) {
     console.error("Error:", error)
     alert(`生成行程时发生错误: ${error instanceof Error ? error.message : String(error)}`)

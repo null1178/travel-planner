@@ -71,3 +71,29 @@ export function generatePlan(requestData: any) {
     return res.json()
   })
 }
+
+// Weather
+export function getWeather(city: string) {
+  return fetch(`${API_BASE}/api/weather?city=${encodeURIComponent(city)}`)
+    .then(res => res.json())
+}
+
+// Share
+export function createShare(planData: any, destination: string, totalDays: number) {
+  return request("/api/share", {
+    method: "POST",
+    body: JSON.stringify({
+      plan_data: planData,
+      destination,
+      total_days: totalDays
+    })
+  })
+}
+
+export function getShare(token: string) {
+  return fetch(`${API_BASE}/api/share/${token}`)
+    .then(res => {
+      if (!res.ok) return res.text().then(t => { throw new Error(t) })
+      return res.json()
+    })
+}
